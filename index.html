@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <title>Music Player </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    </head>
+
+    <body>
+         <div class="background"> 
+            <video id="video-background" autoplay muted width="100%">
+                <source src="assets/video.mp4"></source>
+            </video>
+    
+            <audio src="assets/music.mp3" id="audio"></audio>
+            
+            <button onclick="playVideo()" class="btn btn-dark
+            btn-block" id="VideoButton">Play Video</button>
+
+            <button onclick="playMusic()" class="btn btn-dark
+            btn-block" id="MusicPlay">
+            <i class="fa fa-play-circle fa-3x"></i></button>
+
+            <button onclick="pauseMusic()" class="btn btn-dark
+            btn-block" id="MusicPause">
+            <i class="fa fa-pause-circle fa-3x"></i></button>
+    </body>
+    
+    <script>
+        const videoBackground = document.getElementById("video-background")
+        
+        function playVideo() {
+            if(videoBackground.paused) {
+                videoBackground.play()
+            } else {
+                videoBackground.pause();
+            }
+        }
+
+        const musicBackground = document.getElementById("audio")
+        
+        function playMusic() {
+            if(musicBackground.paused) {
+                musicBackground.play()
+            } 
+        }
+
+        function pauseMusic() {
+            if(!musicBackground.paused) {
+                musicBackground.pause()
+            } 
+        }
+    </script>
+</html>
